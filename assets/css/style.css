@@ -23,7 +23,6 @@
 }
 
 
-
 /*BASE*/
 /***********/
 html {
@@ -46,8 +45,8 @@ p {
 }
 
 h1 {
-    font-size: 2.7rem;
-    margin-bottom: 30px;
+    font-size: 2.3rem;
+    margin-bottom: 20px;
 }
 
 h2 {
@@ -68,7 +67,7 @@ header {
     min-width: 100%;
     padding-bottom: 10%;
     background-image: url('../img/mix-owocow-w-koszyku.jpg');
-    background-size: contain;
+    background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center top;
@@ -101,11 +100,11 @@ footer {
     top: 0;
     left: 0;
     right: 0;
-    min-height: 105px;
+    min-height: 90px;
     background: rgba(0, 0, 0, 0.408);
 }
 
- .header__menu {
+.header__menu {
     list-style: none;
     display: none;
     flex-direction: column;
@@ -114,17 +113,17 @@ footer {
     padding: 0;
 }
 
-.header__menu > li {
+.header__menu>li {
     height: 100%;
     line-height: 50px;
 }
 
-.header__menu > li:hover {
+.header__menu>li:hover {
     text-decoration: underline;
 
 }
 
-.header__menu  a {
+.header__menu a {
     text-transform: uppercase;
     font-size: 2rem;
     color: #ffffff;
@@ -153,7 +152,7 @@ footer {
     transition: opacity .3s;
 
     /* line-height: 70px; */
-        text-align: left;
+    text-align: left;
     padding-left: 0;
     text-transform: uppercase;
 }
@@ -179,7 +178,7 @@ footer {
     position: absolute;
     top: 10px;
     left: 20px;
-    max-width: 50px;
+    max-width: 40px;
     z-index: 1;
 }
 
@@ -193,7 +192,7 @@ footer {
 
 .hero-h1 {
     font-size: 8.1vw;
-    padding-top: 27vw;
+    padding-top: 18vw;
     text-transform: uppercase;
     font-weight: bold;
     text-shadow: 0 0 10px #000000;
@@ -210,20 +209,11 @@ footer {
     display: none;
 }
 
-@keyframes pulse {
-    from {
-        opacity: 0;
-    }
-    
-    to {
-        opacity: 1;
-    }
-}
-  
 .divider {
     width: 200px;
     border: 1px solid pink;
     margin-bottom: 30px;
+    overflow: auto;
 }
 
 .description {
@@ -235,6 +225,7 @@ footer {
 
 .description__title {
     text-align: center;
+    margin-top: 30px;
 }
 
 .description__paragraph {
@@ -256,8 +247,9 @@ footer {
     margin-bottom: 50px;
 }
 
-.fruits h2 {
+.fruits__header {
     text-align: center;
+    font-size: 2.3rem;
 }
 
 .fruit {
@@ -367,7 +359,7 @@ footer {
     width: 100%;
 }
 
-.footer__menu__item a{
+.footer__menu__item a {
     text-decoration: none;
     color: rgb(82, 82, 82);
 }
@@ -446,10 +438,27 @@ footer {
     color: #000000 !important;
 }
 
-/*7. Media Queries*/
+/*8. Animations*/
+
+
+@keyframes pulse {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+/*9. Media Queries*/
 
 @media screen and (min-width: 320px) {
-    
+
     footer {
         padding: 3%;
         align-items: center;
@@ -457,6 +466,7 @@ footer {
 }
 
 @media screen and (min-width: 500px) {
+   
     .description__gallery img {
         max-width: 45%;
 
@@ -468,6 +478,7 @@ footer {
 
 
 @media screen and (min-width: 610px) {
+   
     .header__menu {
         list-style: none;
         display: flex;
@@ -476,13 +487,13 @@ footer {
         align-items: center;
         margin: 0;
         margin-left: auto;
-        height: 105px;
+        height: 90px;
         max-width: 75%;
     }
 
     .header__menu>li {
         height: 100%;
-        line-height: 105px;
+        line-height: 90px;
     }
 
     .header__menu a {
@@ -490,21 +501,21 @@ footer {
         font-size: 2rem;
         text-decoration: none;
     }
-    
+
     .header__menu>li:hover ul {
         opacity: 1;
         visibility: visible;
         transition: opacity .3s;
         position: absolute;
     }
-    
+
     .header__submenu {
         font-size: 1.7rem;
         opacity: 0;
         visibility: hidden;
         list-style: none;
         position: absolute;
-        margin-top: 100px;
+        margin-top: 85px;
         height: 70px;
         line-height: 70px;
         background: #0000008b;
@@ -514,12 +525,12 @@ footer {
         text-align: right;
         transition: opacity .3s;
     }
-    
+
     .header__submenu li {
         padding: 0 10px 0 10px;
         display: inline-block;
     }
-    
+
     .header__submenu li::before {
         display: none;
     }
@@ -540,10 +551,11 @@ footer {
     .definitions__wrapper:not(:last-child) {
         padding-right: 10px;
     }
-    
+
 }
 
 @media screen and (min-width: 650px) {
+    
     .fruit__description {
         padding: 20px 20px 0 20px;
     }
@@ -573,7 +585,7 @@ footer {
 @media screen and (min-width: 828px) {
 
     h1 {
-        font-size: 4rem;
+        font-size: 3.5rem;
     }
 
     h2 {
@@ -594,7 +606,7 @@ footer {
     .footer__menu__wrapper {
         order: 0;
     }
-    
+
     .footer__form__wrapper {
         order: 1;
         margin-bottom: 0;
@@ -603,8 +615,12 @@ footer {
     }
 
     .description__title {
-        margin-top: 40px;
-     }
+        margin-top: 30px;
+    }
+
+    .fruits__header {
+        font-size: 3.5rem;
+    }
 }
 
 @media screen and (min-width: 900px) {
@@ -620,7 +636,7 @@ footer {
     .header__arrow {
         display: inline-block;
         max-width: 100px;
-        animation: pulse 1.5s linear infinite;
+        animation: pulse 2s linear infinite;
     }
 }
 
@@ -636,17 +652,19 @@ footer {
 }
 
 @media screen and (min-width: 1200px) {
+   
     .header__menu {
         max-width: 40%;
     }
 }
 
 @media screen and (min-width: 1525px) {
+   
     .header {
         background-size: cover;
     }
 
     .hero-h1 {
-        padding-top: 23vw;
+        padding-top: 21vw;
     }
 }
